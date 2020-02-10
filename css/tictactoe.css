@@ -1,0 +1,148 @@
+/*tic tac toe*/
+*{
+  background-color: #E1E1E1;
+}
+/*Type Selectors*/
+body {
+  text-align: center;
+  font-family: "Roboto", monospace;
+}
+
+h1 {
+  margin: 0 auto;
+  font-family: "Major Mono Display", monospace;
+  font-size: 48px;
+  margin: 5%;
+  text-shadow: 3px #48E5C2;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: lighter;
+  margin: 0%;
+  position: relative;
+  top:-30px;
+  color: #48E5C2;
+  font-weight: bold;
+  text-shadow: #333333;
+}
+
+h3 {
+  position: relative;
+  top:-5px;
+  padding-bottom: 2%;
+}
+
+/*Class Selectors*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  height: 456px;
+  width: 456px;
+}
+
+.square {
+  background-color: #FCFAF9;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  font-size: 96px;
+  height: 150px;
+  line-height: 150px;
+  user-select: none;
+  width: 150px;
+}
+
+.square:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.score_X{
+font-size: 25px;
+float: left;
+position: relative;
+left: 180px;
+font-weight: bold;
+}
+
+.score_O{
+font-size: 25px;
+float: right;
+position:relative;
+right: 180px;
+font-weight: bold;
+}
+
+/*ID Selectors*/
+#reset-button {
+  background-color: #333333;
+  border: 1px solid black;
+  color: #FCFAF9;
+  font-size: 21px;
+  line-height: 55px;
+  margin: 1%;
+  text-align: center;
+  width: 456px;
+}
+
+#reset-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#score_X{
+  list-style-type: none;
+}
+
+#score_O{
+    list-style-type: none;
+}
+
+#first_X{
+  background-color: #333333;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  color: #FCFAF9;
+  font-weight: bold;
+}
+
+#first_O{
+  background-color: #333333;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  color:#FCFAF9;
+  font-weight: bold;
+}
+
+#board{
+  border-radius: 20px;
+  border-top: 20px;
+  border-bottom: 20px;
+  border-left: 20px;
+  border-right: 20px;
+  border-style:  double;
+  background-color: #48E5C2;
+}

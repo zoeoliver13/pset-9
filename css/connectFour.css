@@ -1,0 +1,28 @@
+/*type selectors */
+/*class selectors */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+  height: 456px;
+  width: 456px;
+}
+
+.circle {
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  height: 50px;
+  user-select: none;
+  width: 50px;
+  border-radius: 50px;
+}
+/*id selectors*/
