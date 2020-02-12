@@ -10,12 +10,13 @@
   height: 100%;
   width: 100%;
   flex-direction: column;
+
 }
 
 .wrap {
   flex-wrap: wrap;
-  height: 456px;
-  width: 456px;
+  height: 300px;
+  width: 450px;
 }
 
 .circle {
@@ -24,5 +25,13 @@
   user-select: none;
   width: 50px;
   border-radius: 50px;
+  margin: 3px 3px;
+  background-color: white;
+}
+.box{
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  height: 370px;
+  padding-top: 20px;
+  background-color: #003cff;
 }
 /*id selectors*/
