@@ -1,0 +1,16 @@
+/*Type Selectors */
+h1{
+font-size: 80px;
+text-align: center;
+font-family: "Bookman Old Style";
+}
+
+/*Class Selectors*/
+.games{
+  margin: 50px;
+}
+.games a{
+  float: left;
+  padding: 30px 50px;
+}
+/*ID Selectors*/
