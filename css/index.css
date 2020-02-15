@@ -1,16 +1,59 @@
+*{
+  background-color: #E1E1E1;
+}
 /*Type Selectors */
 h1{
-font-size: 80px;
-text-align: center;
-font-family: "Bookman Old Style";
+  font-size: 80px;
+  text-align: center;
+  font-family: "Major Mono Display", monospace;
+  font-weight: bold;
 }
+
 
 /*Class Selectors*/
 .games{
-  margin: 50px;
+  font-size:  25px;
+  font-family: "Roboto", monospace;
+  background-color: #48E5C2;
+  width: 100%;
+  height: 90px;
+  font-weight: bold;
 }
-.games a{
-  float: left;
-  padding: 30px 50px;
+
+.connectFour{
+  position: relative;
+  left: 800px;
+  top: 25px;
+  text-decoration: none;
+  background-color: #48E5C2;
+  color: white;
+}
+
+.tictactoe{
+  position: relative;
+  left: 300px;
+  top: 25px;
+  text-decoration: none;
+  background-color: #48E5C2;
+  color: white;
+}
+
+.checkers{
+  display:inline;
+  position: relative;
+  left:290px;
+  top: 25px;
+  text-decoration: none;
+  background-color: #48E5C2;
+  color: white;
+}
+
+.img1{
+  width: 500px;
+  height: 300px;
+  margin-right: 40px;
+  border-width: 5px;
+  border-color: #E1E1E1;
+  border-radius: 30px;
 }
 /*ID Selectors*/
