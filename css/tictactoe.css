@@ -3,6 +3,44 @@
   background-color: #E1E1E1;
 }
 /*Type Selectors*/
+nav {
+  text-align: center;
+  margin: 20px 0 0 ;
+  padding: 10px 0;
+  font-size: 30px;
+  font-family: "Roboto", monospace;
+  background-color: #48E5C2;
+  font-weight: bold;
+
+}
+
+nav ul{
+  list-style: none;
+  margin: 0 2px;
+  padding: 0;
+  background-color: #48E5C2;
+
+}
+
+nav li {
+   display: inline-block;
+   padding: 5px 5px;
+     background-color: #48E5C2;
+}
+
+nav a {
+  font-weight: normal;
+  padding: 10px 5px;
+  font-size: .80em;
+  background-color: #48E5C2;
+  color: white;
+  font-weight: bold;
+
+}
+nav ul li a {
+    text-decoration:none;
+    }
+
 body {
   text-align: center;
   font-family: "Roboto", monospace;
@@ -15,25 +53,48 @@ h1 {
   margin: 5%;
   text-shadow: 3px #48E5C2;
 }
+/*class selectors */
 
-h2 {
-  font-size: 36px;
-  font-weight: lighter;
-  margin: 0%;
-  position: relative;
-  top:-30px;
-  color: #48E5C2;
+.games{
+  font-size:  25px;
+  font-family: "Roboto", monospace;
+  background-color: #48E5C2;
+  min-width: 100%;
+  height: 90px;
   font-weight: bold;
-  text-shadow: #333333;
 }
 
-h3 {
+.connectFour{
   position: relative;
-  top:-5px;
-  padding-bottom: 2%;
+  left: 800px;
+  top: 25px;
+  text-decoration: none;
+  background-color: #48E5C2;
+  color: #333333;
 }
 
+.tictactoe{
+  position: relative;
+  left: 300px;
+  top: 25px;
+  text-decoration: none;
+  background-color: #48E5C2;
+  color: white;
+}
+
+.checkers{
+  display:inline;
+  position: relative;
+  left:290px;
+  top: 25px;
+  text-decoration: none;
+  background-color: #48E5C2;
+  color: white;
+}
 /*Class Selectors*/
+
+
+
 .container {
   display: flex;
   justify-content: center;
