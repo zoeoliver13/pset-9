@@ -72,17 +72,22 @@ const winningConditions = [
   [27, 19, 11, 3],
   [26, 18, 10, 2],
   [25, 17, 9, 1],
-  [24, 16, 8, 0];
+  [24, 16, 8, 0]]
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
-const cirlces = Array.from(document.querySelectorAll("#board div"));
+const circles = Array.from(document.querySelectorAll("#board div"));
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
+document.getElementById("reset-button").onclick = init;
+document.getElementById("first_Red").onclick = first_Red;
+document.getElementById("first_Yellow").onclick = first_Yellow;
+
 ///////////////////// FUNCTIONS /////////////////////////////////////
+//clears board
 function init(){
   board = ["","","","","","","",
            "","","","","","","",
@@ -90,20 +95,34 @@ function init(){
            "","","","","","","",
            "","","","","","","",
            "","","","","","",""]
-  turn = "Red";
+  turn = turn;
+  win = null;
   render();
 }
-  render(){
+  function render(){
     board.forEach(function(mark, index){
       console.log(mark, index);
-      squares[index].textContent = mark;
+      circles[index].textContent = mark;
     });
 }
 function takeTurn(e) {
-  let index = circles.findIndex(function(cirlcles) {
-    return cirlces === e.target;
+  let index = circles.findIndex(function(circles) {
+    return circles === e.target;
   });
   board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";
   render();
+}
+
+//going first
+function first_Red(){
+  init();
+  document.getElementById("go").innerHTML = "Turn: Red";
+  turn = "Red";
+
+}
+function first_Yellow(){
+  init();
+  document.getElementById("go").innerHTML = "Turn: Yellow";
+  turn = "Yellow";
 }
