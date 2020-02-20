@@ -74,9 +74,13 @@ const winningConditions = [
   [25, 17, 9, 1],
   [24, 16, 8, 0]]
 
+
+
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
+let scoreRed = 0;
+let scoreYellow = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const circles = Array.from(document.querySelectorAll("#board div"));
 ///////////////////// EVENT LISTENERS ///////////////////////////////
@@ -114,12 +118,33 @@ function takeTurn(e) {
   render();
 }
 
+
+function getWinner() {
+  let winner = null;
+
+  winningConditions.forEach(function(condition, index) {
+    if (
+      board[condition[0]] &&
+      board[condition[0]] === board[condition[1]] &&
+      board[condition[1]] === board[condition[2]]
+    ) {
+      winner = board[condition[0]];
+      if(winner === "Red"){
+        scoreRed++;
+        document.getElementById("Red").innerHTML = scoreRed;
+      }
+      if(winner === "Yellow"){
+        scoreYellow++;
+        document.getElementById("score_Yellow").innerHTML = scoreYellow;
+      }
+    }
+  });
+}
 //going first
 function first_Red(){
   init();
   document.getElementById("go").innerHTML = "Turn: Red";
   turn = "Red";
-
 }
 function first_Yellow(){
   init();

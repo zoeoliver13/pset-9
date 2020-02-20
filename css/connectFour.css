@@ -89,6 +89,22 @@ nav ul li a {
   padding-top: 20px;
   background-color: #003cff;
 }
+
+.score_Red{
+font-size: 25px;
+float: left;
+position: relative;
+left: 180px;
+font-weight: bold;
+}
+
+.score_Yellow{
+font-size: 25px;
+float: right;
+position:relative;
+right: 180px;
+font-weight: bold;
+}
 /*id selectors*/
 #board{
   background-color: #003cff;
@@ -120,6 +136,13 @@ nav ul li a {
   position: relative;
   color:#FCFAF9;
   font-weight: bold;
+}
+#score_Red{
+  list-style-type: none;
+}
+
+#score_Yellow{
+    list-style-type: none;
 }
 
 #reset-button {
