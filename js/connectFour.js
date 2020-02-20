@@ -106,16 +106,21 @@ function init(){
   function render(){
     board.forEach(function(mark, index){
       console.log(mark, index);
-      circles[index].textContent = mark;
+      circles[index].style.backgroundColor = mark;
     });
 }
+ function render2(){
+
+  }
 function takeTurn(e) {
   let index = circles.findIndex(function(circles) {
     return circles === e.target;
   });
-  board[index]= turn;
+  if ( board[index] == "" ) {
+    board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";
   render();
+}
 }
 
 
