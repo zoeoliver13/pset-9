@@ -72,26 +72,17 @@ const winningConditions = [
   [27, 19, 11, 3],
   [26, 18, 10, 2],
   [25, 17, 9, 1],
-  [24, 16, 8, 0]]
-
-
+  [24, 16, 8, 0];
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
-let scoreRed = 0;
-let scoreYellow = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
-const circles = Array.from(document.querySelectorAll("#board div"));
+const cirlces = Array.from(document.querySelectorAll("#board div"));
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
-document.getElementById("reset-button").onclick = init;
-document.getElementById("first_Red").onclick = first_Red;
-document.getElementById("first_Yellow").onclick = first_Yellow;
-
 ///////////////////// FUNCTIONS /////////////////////////////////////
-//clears board
 function init(){
   board = ["","","","","","","",
            "","","","","","","",
@@ -99,60 +90,20 @@ function init(){
            "","","","","","","",
            "","","","","","","",
            "","","","","","",""]
-  turn = turn;
-  win = null;
+  turn = "Red";
   render();
 }
-  function render(){
+  render(){
     board.forEach(function(mark, index){
       console.log(mark, index);
-      circles[index].style.backgroundColor = mark;
+      squares[index].textContent = mark;
     });
 }
- function render2(){
-
-  }
 function takeTurn(e) {
-  let index = circles.findIndex(function(circles) {
-    return circles === e.target;
+  let index = circles.findIndex(function(cirlcles) {
+    return cirlces === e.target;
   });
-  if ( board[index] == "" ) {
-    board[index]= turn;
+  board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";
   render();
-}
-}
-
-
-function getWinner() {
-  let winner = null;
-
-  winningConditions.forEach(function(condition, index) {
-    if (
-      board[condition[0]] &&
-      board[condition[0]] === board[condition[1]] &&
-      board[condition[1]] === board[condition[2]]
-    ) {
-      winner = board[condition[0]];
-      if(winner === "Red"){
-        scoreRed++;
-        document.getElementById("Red").innerHTML = scoreRed;
-      }
-      if(winner === "Yellow"){
-        scoreYellow++;
-        document.getElementById("score_Yellow").innerHTML = scoreYellow;
-      }
-    }
-  });
-}
-//going first
-function first_Red(){
-  init();
-  document.getElementById("go").innerHTML = "Turn: Red";
-  turn = "Red";
-}
-function first_Yellow(){
-  init();
-  document.getElementById("go").innerHTML = "Turn: Yellow";
-  turn = "Yellow";
 }

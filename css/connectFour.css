@@ -10,11 +10,15 @@ h1 {
   text-shadow: 3px #48E5C2;
   text-align: center;
 }
-
+h2{
+  text-align: center;
+  font-family: "Roboto", monospace;
+}
 h3{
   text-align: center;
   font-family: "Roboto", monospace;
 }
+
 nav {
   text-align: center;
   margin: 20px 0 0 ;
@@ -51,6 +55,7 @@ nav a {
 nav ul li a {
     text-decoration:none;
 }
+
 
 /*class selectors */
 
@@ -94,16 +99,20 @@ nav ul li a {
 font-size: 25px;
 float: left;
 position: relative;
-left: 180px;
+left: 50px;
 font-weight: bold;
+font-family: "Roboto", monospace;
+
 }
 
 .score_Yellow{
 font-size: 25px;
 float: right;
 position:relative;
-right: 180px;
+right: 50px;
 font-weight: bold;
+font-family: "Roboto", monospace;
+padding-bottom: 20px;
 }
 /*id selectors*/
 #board{
