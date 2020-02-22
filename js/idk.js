@@ -1,5 +1,7 @@
+
 ///////////////////// Constants /////////////////////////////////////
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
+let interval = setInterval (brickBreaker,10);
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let x = canvas.width/2;
@@ -14,13 +16,32 @@ let paddle_Height = 10;
 let paddle_move = (width-paddle_Width)/2;
 let right_Button = false;
 let left_Button = false;
+let mouse = false;
+let brick_Width = 75;
+let brick_Height = 20;
+let padding = 10;
+let brick_Rows = 3;
+let brick_Colums = 5;
+let top = 30;
+let left = 30;
+let bricks = [];
+  for(var i = 0; i < brick_Colums; i ++){
+    bricks[i]=[];
+    for(var j = 0; j < brick_Rows; j++){
+      bricks[i][j] = {x: 0, y:0};
+    }
+  }
+  let brickX = (i*(brick_Width+padding))+left;
+  let brickY = (j*(brick_Height+padding))+top;
+
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 ///////////////////// EVENT LISTENERS ///////////////////////////////
-document.addEventListener("keydown", down, false);
-document.addEventListener("keyup", up, false);
+document.addEventListener("keydown", keydown, false);
+document.addEventListener("keyup", keyup, false);
 ///////////////////// FUNCTIONS /////////////////////////////////////
 //moves the paddle
-function down(e){
+
+function keydown(e){
   if(e.ket == "Right" || e.key == "ArrowRight"){
     right_Button = true;
   }
@@ -29,7 +50,7 @@ function down(e){
   }
 }
 
-function up (e){
+function keyup (e){
   if(e.key == "Right" || e.key == "ArrowRight"){
     right_Button = false;
   }
@@ -55,17 +76,47 @@ function paddle(){
   ctx.closePath();
 }
 
+function bricks() {
+    for(var c=0; c<brick_Colums; c++) {
+        for(var r=0; r<brick_Rows; r++) {
+            var brickX = (c*(brick_Width+padding))+left;
+            var brickY = (r*(brick_Height+padding))+top;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
+            ctx.beginPath();
+            ctx.rect(brickX, brickY, brick_Width, brick_Height);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+}
+
+
 function brickBreaker(){
   ctx.clearRect(0, 0, width, height);
   ball();
   paddle();
+  bricks();
 //makes the balls bounce off the sides
   if(x + move1 > width - circle || x + move1 < circle){
     move1 = -move1;
   }
   if(y + move2 > height - circle || y + move2 < circle){
-    move2 = -move2;
+    move2 = - move2;
   }
+//game over
+  else if(y + move2 > height - circle) {
+      if(x > paddle_move && x < paddle_move + paddle_Width) {
+          move2 = - move2;
+      }
+      else {
+          document.getElementById("gameOver").innerHtml = "Game Over"
+          document.location.reload();
+          clearInterval(interval);
+      }
+  }
+  //paddle
   if(right_Button) {
         paddle_move = paddle_move+7;
         if (paddle_move + paddle_Width > width){
@@ -79,10 +130,7 @@ function brickBreaker(){
         }
     }
 
+
   x = x+move1;
   y = y+move2;
 }
-
-
-
-setInterval (brickBreaker,10);
