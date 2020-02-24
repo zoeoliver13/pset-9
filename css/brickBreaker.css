@@ -7,10 +7,18 @@
 canvas {
   background: #eee;
   display: block;
-  margin: 0 auto;
-  position: relative;
-  left: 40px;
-  top: 65px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border-top: 20px;
+  border-bottom: 20px;
+  border-left: 20px;
+  border-right: 20px;
+  border-style:  double;
+  border-color:  #48E5C2;
+  background-color: #333333;
 }
 
 h1 {
@@ -62,7 +70,8 @@ nav ul li a {
 span{
     text-align: center;
     font-family: "Roboto", monospace;
-
+    padding-left: 0;
+    list-style-type: none;
   }
 /*Class Selectors*/
 .score{
@@ -72,11 +81,15 @@ position:relative;
 right: 350px;
 font-weight: bold;
 font-family: "Roboto", monospace;
-padding-bottom: 20px;
+  list-style-type: none;
+}
+
+.lives{
+    list-style-type: none;
 }
 /*ID Selectors*/
 #score{
-  list-style-type: none;
+
   text-align: center;
   font-family: "Roboto", monospace;
 
@@ -91,9 +104,11 @@ padding-bottom: 20px;
   margin: 1%;
   text-align: center;
   width: 456px;
-  position: relative;
-  bottom: -90px;
-  padding-left: -90px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 
 #reset-button:hover {

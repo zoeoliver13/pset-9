@@ -59,7 +59,7 @@ const winningConditions = [
   [24, 18, 12, 6],
   [23, 17, 11, 5],
   [22, 16, 10, 4],
-  [21, 15, 9, 2],
+  [21, 15, 9, 3],
 //diagonal(left)
   [41, 33, 25, 17],
   [40, 32, 24, 16],
@@ -72,7 +72,8 @@ const winningConditions = [
   [27, 19, 11, 3],
   [26, 18, 10, 2],
   [25, 17, 9, 1],
-  [24, 16, 8, 0];
+  [24, 16, 8, 0]
+];
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
@@ -93,15 +94,15 @@ function init(){
   turn = "Red";
   render();
 }
-  render(){
+  function render(){
     board.forEach(function(mark, index){
       console.log(mark, index);
-      squares[index].textContent = mark;
+      circles[index].textContent = mark;
     });
 }
 function takeTurn(e) {
-  let index = circles.findIndex(function(cirlcles) {
-    return cirlces === e.target;
+  let index = circles.findIndex(function(circles) {
+    return circles === e.target;
   });
   board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";

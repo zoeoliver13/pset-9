@@ -3,6 +3,7 @@
   background-color: #E1E1E1;
 }
 /*Type Selectors*/
+
 nav {
   text-align: center;
   margin: 20px 0 0 ;
@@ -40,7 +41,6 @@ nav a {
 nav ul li a {
     text-decoration:none;
 }
-
 body {
   text-align: center;
   font-family: "Roboto", monospace;
