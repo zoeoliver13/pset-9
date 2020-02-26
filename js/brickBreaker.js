@@ -38,6 +38,9 @@ let bricks = [];
 document.addEventListener("keydown", keydown, false);
 document.addEventListener("keyup", keyup, false);
 ///////////////////// FUNCTIONS /////////////////////////////////////
+//function hitGround(){
+  //if()
+//}
 
 //moves the paddle
 

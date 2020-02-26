@@ -124,7 +124,6 @@ function takeTurn(e) {
   });
   board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";
-  win = getWinner();
 
   render();
 }
