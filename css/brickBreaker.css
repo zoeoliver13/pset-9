@@ -87,6 +87,25 @@ font-family: "Roboto", monospace;
 .lives{
     list-style-type: none;
 }
+.home:hover{
+  color: lightgray;
+  font-size: 30px;
+}
+
+.tictactoe:hover{
+    color: lightgray;
+    font-size: 30px;
+}
+
+.connectFour:hover{
+    color: lightgray;
+    font-size: 30px;
+}
+.brickBreaker{
+  font-weight: bold;
+  color: #333333;
+  font-size: 32px;
+}
 /*ID Selectors*/
 #score{
 

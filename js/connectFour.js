@@ -77,13 +77,30 @@ const winningConditions = [
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
-let turn;
+let win;
+let turn = "Red";
+let scoreRed = 0;
+let scoreYellow = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
-const cirlces = Array.from(document.querySelectorAll("#board div"));
+const circles = Array.from(document.querySelectorAll("#board div"));
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
+document.getElementById("first_Red").onclick = first_Red;
+document.getElementById("first_Yellow").onclick = first_Yellow;
 document.getElementById("board").onclick = takeTurn;
+document.getElementById("reset-button").onclick = init;
 ///////////////////// FUNCTIONS /////////////////////////////////////
+function first_Red(){
+  init();
+  document.getElementById("go").innerHTML = "Turn: Red";
+  turn = "Red";
+
+}
+function first_Yellow(){
+  init();
+  document.getElementById("go").innerHTML = "Turn: Yellow";
+  turn = "Yellow";
+}
 function init(){
   board = ["","","","","","","",
            "","","","","","","",
@@ -91,13 +108,14 @@ function init(){
            "","","","","","","",
            "","","","","","","",
            "","","","","","",""]
-  turn = "Red";
+  turn = turn;
   render();
 }
+
   function render(){
     board.forEach(function(mark, index){
       console.log(mark, index);
-      circles[index].textContent = mark;
+      circles[index].style.backgroundColor = mark;
     });
 }
 function takeTurn(e) {
@@ -106,5 +124,31 @@ function takeTurn(e) {
   });
   board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";
+  win = getWinner();
+
   render();
+}
+
+function getWinner() {
+  let winner = null;
+
+  winningConditions.forEach(function(condition, index) {
+    if (
+      board[condition[0]] === board[condition[1]] &&
+      board[condition[1]] === board[condition[2]]&&
+      board[condition[2]] === board[condition[3]]
+    ) {
+      winner = board[condition[0]];
+      if(winner === "Winner"){
+        scoreRed++;
+        document.getElementById("score_Red").innerHTML = scoreRed;
+      }
+      if(winner === "Yellow"){
+        scoreYellow++;
+        document.getElementById("score_Yellow").innerHTML = scoreYellow;
+      }
+    }
+  });
+
+return winner ? winner : board.includes("") ? null : "T";
 }

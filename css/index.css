@@ -56,4 +56,23 @@ nav ul li a {
   border-color: #E1E1E1;
   border-radius: 30px;
 }
+.home{
+  font-weight: bold;
+  color: #333333;
+  font-size: 32px;
+}
+
+.tictactoe:hover{
+    color: lightgray;
+    font-size: 30px;
+}
+
+.connectFour:hover{
+    color: lightgray;
+    font-size: 30px;
+}
+.brickBreaker:hover{
+    color: lightgray;
+    font-size: 30px;
+}
 /*ID Selectors*/

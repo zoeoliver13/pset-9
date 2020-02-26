@@ -4,6 +4,7 @@
 }
 /*Type Selectors*/
 
+
 nav {
   text-align: center;
   margin: 20px 0 0 ;
@@ -41,6 +42,7 @@ nav a {
 nav ul li a {
     text-decoration:none;
 }
+
 body {
   text-align: center;
   font-family: "Roboto", monospace;
@@ -55,42 +57,7 @@ h1 {
 }
 /*class selectors */
 
-.games{
-  font-size:  25px;
-  font-family: "Roboto", monospace;
-  background-color: #48E5C2;
-  min-width: 100%;
-  height: 90px;
-  font-weight: bold;
-}
 
-.connectFour{
-  position: relative;
-  left: 800px;
-  top: 25px;
-  text-decoration: none;
-  background-color: #48E5C2;
-  color: #333333;
-}
-
-.tictactoe{
-  position: relative;
-  left: 300px;
-  top: 25px;
-  text-decoration: none;
-  background-color: #48E5C2;
-  color: white;
-}
-
-.checkers{
-  display:inline;
-  position: relative;
-  left:290px;
-  top: 25px;
-  text-decoration: none;
-  background-color: #48E5C2;
-  color: white;
-}
 
 .container {
   display: flex;
@@ -139,6 +106,26 @@ float: right;
 position:relative;
 right: 180px;
 font-weight: bold;
+}
+
+.home:hover{
+  color: lightgray;
+  font-size: 30px;
+}
+
+.tictactoe{
+  font-weight: bold;
+  color: #333333;
+  font-size: 32px;
+}
+
+.connectFour:hover{
+  color: lightgray;
+  font-size: 30px;
+}
+.brickBreaker:hover{
+  color: lightgray;
+  font-size: 30px;
 }
 
 /*ID Selectors*/
