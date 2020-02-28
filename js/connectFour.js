@@ -90,6 +90,9 @@ document.getElementById("first_Yellow").onclick = first_Yellow;
 document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
 ///////////////////// FUNCTIONS /////////////////////////////////////
+//function drop(){
+
+//}
 function first_Red(){
   init();
   document.getElementById("go").innerHTML = "Turn: Red";
@@ -118,25 +121,29 @@ function init(){
       circles[index].style.backgroundColor = mark;
     });
 }
+
 function takeTurn(e) {
-  let index = circles.findIndex(function(circles) {
-    return circles === e.target;
+  if (!win) {
+  let index = circles.findIndex(function(circle) {
+    return circle === e.target;
   });
+  if (board[index] === "") {
   board[index]= turn;
   turn = turn === "Red"?"Yellow":"Red";
-
   render();
+    }
+  }
 }
 
 function getWinner() {
   let winner = null;
 
-  winningConditions.forEach(function(condition, index) {
-    if (
-      board[condition[0]] === board[condition[1]] &&
-      board[condition[1]] === board[condition[2]]&&
-      board[condition[2]] === board[condition[3]]
-    ) {
+winningConditions.forEach(function(condition, index) {
+  if (
+    board[condition[0]] &&
+    board[condition[0]] === board[condition[1]] &&
+    board[condition[1]] === board[condition[2]]
+  ) {
       winner = board[condition[0]];
       if(winner === "Winner"){
         scoreRed++;

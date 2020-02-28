@@ -43,7 +43,6 @@ document.addEventListener("keyup", keyup, false);
 //}
 
 //moves the paddle
-
 function keydown(e){
   if(e.ket == "Right" || e.key == "ArrowRight"){
     right_Button = true;

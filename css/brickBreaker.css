@@ -70,15 +70,13 @@ nav ul li a {
 span{
     text-align: center;
     font-family: "Roboto", monospace;
-    padding-left: 0;
+
     list-style-type: none;
   }
 /*Class Selectors*/
 .score{
 font-size: 25px;
-float: right;
-position:relative;
-right: 350px;
+text-align: center;
 font-weight: bold;
 font-family: "Roboto", monospace;
   list-style-type: none;
