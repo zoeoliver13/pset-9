@@ -58,6 +58,26 @@ function keyup (e){
     left_Button = false;
   }
 }
+//breaks the bricks
+function breakBricks() {
+    for (var c = 0; c < brick_Colums; c++) {
+        for (var r = 0; r < brick_Rows; r++) {
+            var b= bricks[c][r];
+            if (b.status == 1) {
+                if (x > b.x && x < b.x + brick_Width && y > b.y && y < b.y + brick_Height) {
+                    move2 = -move2;
+                    b.status = 0;
+                    score++;
+                    document.getElementById("score").innerHTML = "Score: " + score;
+                    if (score == brick_Rows*brick_Colums){
+                      alert( "You Win!");
+                    document.location.reload();
+                    }
+                }
+            }
+        }
+    }
+}
 
 //makes the bricks
 function brick_Array() {
@@ -78,26 +98,6 @@ function brick_Array() {
     }
   }
 
-//breaks the bricks
-function breakBricks() {
-    for (var c = 0; c < brick_Colums; c++) {
-        for (var r = 0; r < brick_Rows; r++) {
-            var b= bricks[c][r];
-            if (b.status == 1) {
-                if (x > b.x && x < b.x + brick_Width && y > b.y && y < b.y + brick_Height) {
-                    brickY = -brickY;
-                    b.status = 0;
-                    score++;
-                    document.getElementById("score").innerHTML = "Score: " + score;
-                    if (score == brick_Rows*brick_Colums){
-                      alert( "You Win!");
-                    document.location.reload();
-                    }
-                }
-            }
-        }
-    }
-}
 
 function ball(){
   ctx.beginPath();
@@ -130,7 +130,7 @@ function brickBreaker(){
   breakBricks();
 
 //makes the balls bounce off the sides
-  if(x + move1 > width - circle || x + move1 < circle){
+ if(x + move1 > width - circle || x + move1 < circle){
     move1 = -move1;
   }
   if( y + move2 < circle){
