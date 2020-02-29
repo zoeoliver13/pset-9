@@ -7,8 +7,6 @@
 canvas {
   background: #eee;
   display: block;
-  padding-left: 0;
-  padding-right: 0;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
@@ -74,17 +72,8 @@ span{
     list-style-type: none;
   }
 /*Class Selectors*/
-.score{
-font-size: 25px;
-text-align: center;
-font-weight: bold;
-font-family: "Roboto", monospace;
-  list-style-type: none;
-}
 
-.lives{
-    list-style-type: none;
-}
+
 .home:hover{
   color: lightgray;
   font-size: 30px;
@@ -106,30 +95,11 @@ font-family: "Roboto", monospace;
 }
 /*ID Selectors*/
 #score{
-
+  font-size: 25px;
   text-align: center;
+  font-weight: bold;
   font-family: "Roboto", monospace;
+  list-style-type: none;
 
-}
-
-#reset-button {
-  background-color: #333333;
-  border: 1px solid black;
-  color: #FCFAF9;
-  font-size: 21px;
-  line-height: 55px;
-  margin: 1%;
-  text-align: center;
-  width: 456px;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
-
-#reset-button:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
+  margin: 42%;
 }

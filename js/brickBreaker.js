@@ -88,9 +88,10 @@ function breakBricks() {
                     brickY = -brickY;
                     b.status = 0;
                     score++;
-                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("score").innerHTML = "Score: " + score;
                     if (score == brick_Rows*brick_Colums){
-                    document.getElementById("win").innerHTML = "You Win!";
+                      alert( "You Win!");
+                    document.location.reload();
                     }
                 }
             }
@@ -116,9 +117,9 @@ function paddle(){
 
 }
 function livesRemaining() {
-    ctx.font = "16px Roboto";
+    ctx.font = "20px Roboto";
     ctx.fillStyle = "#48E5C2";
-    ctx.fillText("Lives: "+lives, lives-0, 20);
+    ctx.fillText("Lives: "+lives, lives, 20, 60);
 }
 function brickBreaker(){
   ctx.clearRect(0, 0, width, height);
@@ -143,8 +144,8 @@ function brickBreaker(){
       else {
         lives--;
         if(!lives){
-          document.getElementById("gameOver").innerHtml = "Game Over"
-          document.location.reload();
+        alert("Game Over! " + "Your Score: " + score + ".");
+        document.location.reload();
       }
       else{
         x = width/2;
