@@ -2,6 +2,9 @@
   background-color: #E1E1E1;
 }
 
+li{
+  text-align: center;
+}
 h1 {
   margin: 0 auto;
   font-family: "Major Mono Display", monospace;

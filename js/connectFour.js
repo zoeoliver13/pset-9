@@ -1,3 +1,4 @@
+
 ///////////////////// CONSTANTS /////////////////////////////////////
 const winningConditions = [
   //horizontal
@@ -25,7 +26,7 @@ const winningConditions = [
   [36, 37, 38, 39],
   [37, 38, 39, 40],
   [38, 39, 40, 41],
-  //verticle
+  //vertical
   [0, 7, 14, 21],
   [7, 14, 21, 28],
   [14, 21, 28, 35],
@@ -47,7 +48,7 @@ const winningConditions = [
   [6, 13, 20, 27],
   [13, 20, 27, 34],
   [20, 27, 34, 41],
-  //diagonal -> right
+  //diagonal(right)
   [3, 9, 15, 21],
   [4, 10, 16, 22],
   [10, 16, 22, 28],
@@ -60,7 +61,7 @@ const winningConditions = [
   [13, 19, 25, 31],
   [19, 25, 31, 37],
   [20, 26, 32, 38],
-  //diagonal -> left
+  //diagonal(left)
   [14, 22, 30, 38],
   [7, 15, 23, 31],
   [15, 23, 31, 39],
