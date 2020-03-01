@@ -1,5 +1,5 @@
 
-const winningConditions = [
+//const winningConditions = [
 //horizontal
   [35, 36, 37, 38],
   [36, 37, 38, 39],
@@ -73,7 +73,7 @@ const winningConditions = [
   [26, 18, 10, 2],
   [25, 17, 9, 1],
   [24, 16, 8, 0]
-];
+;
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
@@ -157,4 +157,20 @@ winningConditions.forEach(function(condition, index) {
   });
 
 return winner ? winner : board.includes("") ? null : "T";
-}
+}/*function drop(col) {
+
+    for (row=5; row>=0; row--) {
+      if (gameboard[row][col] == 0) {
+        gameboard[row][col] = active_player;
+        drawBoard();
+        if (active_player == 1) {
+          active_player = 2;
+        } else {
+          active_player = 1;
+        }
+
+        setUpTurn();
+        return true;
+      }
+    }
+}*/

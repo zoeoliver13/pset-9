@@ -1,7 +1,7 @@
-*{
+ *{
   background-color: #E1E1E1;
 }
-/*type selectors */
+
 h1 {
   margin: 0 auto;
   font-family: "Major Mono Display", monospace;
@@ -56,8 +56,6 @@ nav ul li a {
     text-decoration:none;
 }
 
-
-/*class selectors */
 
 
 .container {
@@ -134,7 +132,7 @@ padding-bottom: 20px;
     color: lightgray;
     font-size: 30px;
 }
-/*id selectors*/
+
 #board{
   background-color: #003cff;
 }
