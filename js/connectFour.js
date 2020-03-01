@@ -120,6 +120,7 @@ function init(){
       console.log(mark, index);
       circles[index].style.backgroundColor = mark;
     });
+    
 }
 
 function takeTurn(e) {
@@ -142,10 +143,11 @@ winningConditions.forEach(function(condition, index) {
   if (
     board[condition[0]] &&
     board[condition[0]] === board[condition[1]] &&
-    board[condition[1]] === board[condition[2]]
+    board[condition[1]] === board[condition[2]] &&
+    board[condition[2]] === board[condition[3]]
   ) {
       winner = board[condition[0]];
-      if(winner === "Winner"){
+      if(winner === "Red"){
         scoreRed++;
         document.getElementById("score_Red").innerHTML = scoreRed;
       }
