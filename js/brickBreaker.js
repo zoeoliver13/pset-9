@@ -16,11 +16,11 @@ let paddle_move = (width-paddle_Width)/2;
 let right_Button = false;
 let left_Button = false;
 let mouse = false;
-let brick_Width = 75;
+let brick_Width = 55;
 let brick_Height = 20;
 let padding = 10;
-let brick_Rows = 3;
-let brick_Colums = 5;
+let brick_Rows = 5;
+let brick_Colums = 7;
 let topOfCanvas = 30;
 let left = 30;
 let bricks = [];
@@ -33,7 +33,7 @@ let bricks = [];
 let brickX = (i*(brick_Width+padding))+left;
 let brickY = (j*(brick_Height+padding))+topOfCanvas;
 let score = 0;
-let lives = 3;
+let lives = 4;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 document.addEventListener("keydown", keydown, false);
